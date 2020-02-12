@@ -1,6 +1,7 @@
 # Mes-Charmantes-Carottes
 
-A website for junior gardeners, inspired by my 5 years old daughter
+A website for junior gardeners, title inspired by my 5 years old daughter
+Realized under the control of my 8 years old chief gardener 
 
 Make gardening easy with Mes Charmantes Carottes
 Respect seasons and follow your plantation with a calendar 
