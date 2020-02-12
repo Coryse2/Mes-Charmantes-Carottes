@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes Charmantes Carottes{% endblock %}
+
+{% block body %}
+<img class="nav-item plant" src="{{ asset('pictures/plant.png') }}">
+<div class="home-title" role="main">
+<h1> Mes charmantes carottes</h1>
+</div>
+<div class="vegetables">
+<img class="vegetable" src="{{ asset('pictures/carrot.png') }}">
+<img  class="vegetable" src="{{ asset('pictures/potato.png') }}">
+<img  class="vegetable" src="{{ asset('pictures/broccoli.png') }}">
+</div>
+{% endblock %}
