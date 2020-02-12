@@ -3,6 +3,8 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
+<div class="form">  
+<legend><h1>Connexion</h1></legend>
 <form method="post">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -35,8 +37,10 @@
         </div>
     #}
 
-    <button class="btn btn-lg btn-primary" type="submit">
+    <button class="btn btn-lg btn-form btn-outline-primary" type="submit">
+     <img class="vegetable-btn" src="{{ asset('pictures/potato.png') }}">
         Sign in
     </button>
+    </div>
 </form>
 {% endblock %}

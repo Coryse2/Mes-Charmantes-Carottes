@@ -1,11 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New User{% endblock %}
+{% block title %}MCC-Inscription{% endblock %}
 
 {% block body %}
-    <h1>Create new User</h1>
+<div class="form">  
+<legend><h1>Inscription</h1></legend>
+{{ form_start(form,{'attr':{'class':'form-group'}}) }}
+{{ form_row(form.username,{'attr':{'class':'form-control'}}) }}
+{{ form_row(form.email,{'attr':{'class':'form-control'}}) }}
+{{ form_row(form.city, {'id':'city', 'attr':{'class':'form-control'} }) }}
+{{ form_row(form.password,{'attr':{'class':'form-control'}}) }}
 
-    {{ include('user/_form.html.twig') }}
+ {{ include('user/_form.html.twig') }}
+</div>
+   <!-- load JS -->
+    <script src="https://cdn.jsdelivr.net/npm/places.js@1.17.1"></script>
+	<script src="{{ asset('js/algo.js') }}"></script>
+	</script>  
 
-    <a href="{{ path('user_index') }}">back to list</a>
 {% endblock %}

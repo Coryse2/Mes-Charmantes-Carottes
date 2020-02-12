@@ -1,11 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mes Charmantes Carottes{% endblock %}
+{% block title %}MCC - Home{% endblock %}
 
 {% block body %}
 <img class="nav-item plant" src="{{ asset('pictures/plant.png') }}">
 <div class="home-title" role="main">
-<h1> Mes charmantes carottes</h1>
+
+{#if connected user#}
+					{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <h1> Les Charmantes Carottes de {{app.user.username}}</h1>
+                    {% else %}
+                    <h1> Mes Charmantes Carottes</h1>
+                    {% endif %}
 </div>
 <div class="vegetables">
 <img class="vegetable" src="{{ asset('pictures/carrot.png') }}">

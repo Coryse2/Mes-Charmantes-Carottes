@@ -1,54 +1,93 @@
-body{
+body {
     background-image: url(../pictures/home.jpg);
-    filter : blur(35%);
-    opacity:1;
+    filter: blur(35%);
+    opacity: 1;
     background-size: 150vh;
     background-repeat: no-repeat;
-    background-color: #cde3ee ;
-    text-align:center;
- }
- .home-title{
-     text-align:center;
-     margin:10em auto;
-}
-h1{
-    font-weight: 1000;  
-    color:#e96b1f;
-    font-weight:1.5em;
-}
-img.plant {
-    width:8%;
-}
-.vegetables{
-    text-align:center;
-}
-.vegetable{
-    width:5%;
-    margin:2em;
-}
-.vegetable{
-    animation : anim 3s;
-}
-@keyframes anim {
-        0% {
-            transform: scale(1);
-        }
-        33% {
-            opacity: .7;
-            transform: scale(1.7);
-        }
-        60% {
-            transform: scale(1.3);
-        }
-        100% {
-            opacity: .5;
-            transform: scale(1.6);
-        }
-}
-.vegetable:hover{
-    transform:rotate(320deg); 
-}
-img.plant:hover{
-    transform:rotate(320deg); 
+    background-color: #cde3ee;
+    text-align: center;
 }
 
+/**HOMEPAGE**/
+.home-title {
+    text-align: center;
+    margin: 10em auto 5em auto;
+}
+
+.home-title h1  {
+    font-weight: 1000;
+    color: #e96b1f;
+    font-weight: 1.5em;
+    background-color: #f0f8fb;
+}
+
+img.plant {
+    width: 10%;
+}
+
+.vegetables {
+    text-align: center;
+}
+
+.vegetable {
+    width: 8%;
+    margin: 2em;
+}
+
+.vegetable {
+    animation: anim 3s;
+}
+
+@keyframes anim {
+    0% {
+        transform: scale(1);
+    }
+
+    33% {
+        opacity: .7;
+        transform: scale(1.7);
+    }
+
+    60% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        opacity: .5;
+        transform: scale(1.6);
+    }
+}
+
+.vegetable:hover {
+    transform: rotate(320deg);
+}
+
+img.plant:hover {
+    transform: rotate(320deg);
+}
+
+/*FORMS*/
+.form {
+    background-color: #f0f8fb;
+    text-align: center;
+    padding: 2em;
+    margin: 2em auto;
+    width: 50%;
+    padding: 4em;
+}
+
+.btn-form {
+    margin-top:2em;
+    padding: .5em;
+    font-size: 1.2em;
+    font-weight: 900;
+    width:50%;
+}
+
+.vegetable-btn {
+    width: 15%;
+}
+
+.vegetable-btn:hover {
+    transform: rotate(0.5turn);
+}

@@ -1,4 +1,6 @@
 {{ form_start(form) }}
     {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <button class="btn btn-form btn-outline-primary">{{ button_label|default('Valider') }}
+    <img class="vegetable-btn" src="{{ asset('pictures/carrot.png') }}">
+    </button>
 {{ form_end(form) }}
