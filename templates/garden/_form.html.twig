@@ -1,0 +1,5 @@
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+    <input type="button" class="btn-previous btn btn-outline-dark" value="Page précédente" onclick="history.go(-1)">
+{{ form_end(form) }}
