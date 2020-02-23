@@ -4,6 +4,7 @@
 
 {% block body %}
 <img class="nav-item plant" src="{{ asset('pictures/plant.png') }}">
+
 <div class="home-title" role="main">
 
 {#if connected user#}
@@ -12,7 +13,8 @@
                     {% else %}
                     <h1> Mes Charmantes Carottes</h1>
                     {% endif %}
-</div>
+
+<a class="nav-link btn-success" href="{{ path('homepage') }}">Entrer</a></div>
 <div class="vegetables">
 <img class="vegetable" src="{{ asset('pictures/carrot.png') }}">
 <img  class="vegetable" src="{{ asset('pictures/potato.png') }}">

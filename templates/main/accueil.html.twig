@@ -13,7 +13,12 @@
   <p class="lead">
   Commence par créer un jardin puis laisse toi guider!
   </p>
+
+<button class="btn btn-success">
+  <img class="vegetable-planting" src="{{ asset('pictures/planting.png') }}"> </button>
+
+ <div><input type="button" class="btn-previous btn btn-outline-dark" value="Page précédente" onclick="history.go(-1)"></div>
 </div>
 
- <input type="button"  class="btn-previous btn btn-outline-dark" value="Page précédente" onclick="history.go(-1)">
+
 {% endblock %}

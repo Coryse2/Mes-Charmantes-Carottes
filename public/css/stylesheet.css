@@ -7,29 +7,38 @@ body {
     background-color: #cde3ee;
     text-align: center;
 }
-a.navbar-brand{
-    width:5%;
-    padding:0;
-    text-align:left
+
+.btn-previous{
+    margin-top: 3em;
 }
-.carotts{
-    margin-right:0em;
+a.navbar-brand {
+    width: 5%;
+    padding: 0;
+    text-align: left
 }
-.navbar-brand img{
-    width:50%;
-    padding:0;
-    margin-right:0;
+
+.carotts {
+    margin-right: 0em;
 }
+
+.navbar-brand img {
+    width: 50%;
+    padding: 0;
+    margin-right: 0;
+}
+
 .navbar-brand {
-    margin-right:.8em;
+    margin-right: .8em;
 }
+
 /**HOMEPAGE**/
 .home-title {
     text-align: center;
     margin: 10em auto 5em auto;
+    width: 50%;
 }
 
-.home-title h1  {
+.home-title h1 {
     font-weight: 1000;
     color: #e96b1f;
     font-weight: 1.5em;
@@ -46,7 +55,7 @@ img.plant {
 
 .vegetable {
     width: 8%;
-    margin: 2em 2em 6em 2em ;
+    margin: 2em 2em 6em 2em;
 }
 
 .vegetable {
@@ -80,27 +89,34 @@ img.plant {
 img.plant:hover {
     transform: rotate(320deg);
 }
+
 /*ACCUEIL*/
-.jumbotron{
-    width:50%;
-    float:right;
+.jumbotron {
+    background-color: #f0f8fb;
+    width: 50%;
+    float: right;
 }
+
+.vegetable-planting {
+    padding: 0;
+    width: 25%;
+}
+
 /*FORMS*/
 .form {
     background-color: #f0f8fb;
     text-align: center;
-    padding: 2em;
     margin: 2em auto;
     width: 50%;
     padding: 4em;
 }
 
 .btn-form {
-    margin-top:2em;
+    margin-top: 2em;
     padding: .5em;
     font-size: 1.2em;
     font-weight: 900;
-    width:50%;
+    width: 50%;
 }
 
 .vegetable-btn {
@@ -113,14 +129,41 @@ img.plant:hover {
 
 
 @media (max-width: 810px) {
+    .display-3 {
+        font-size: 1.5em;
+    }
+
+    .home-title {
+        text-align: center;
+        margin: 10em auto 5em auto;
+        width: 80%;
+    }
+
+    .home-title h1 {
+        font-weight: 1000;
+        color: #e96b1f;
+        font-weight: 1em;
+        background-color: #f0f8fb;
+    }
+
     /*ACCUEIL*/
-.jumbotron{
-    width:100%;
-    float:right;
-}
-.navbar-brand img{
-    width:100%;
-    padding:0;
-    margin-right:0;
-}
+    .jumbotron {
+        width: 100%;
+
+    }
+
+    .navbar-brand img {
+        width: 100%;
+        padding: 0;
+        margin-right: 0;
+    }
+
+    /*FORMS*/
+    .form {
+        background-color: #f0f8fb;
+        text-align: center;
+        padding: 2em;
+        margin: 2em auto;
+        width: 80%;
+    }
 }
