@@ -42,7 +42,9 @@ class GardenController extends AbstractController
             $entityManager->persist($garden);
             $entityManager->flush();
 
-            return $this->redirectToRoute('garden_index');
+            return $this->redirectToRoute('garden_show',[ 
+                'id' => $garden->getId(),
+            ]);
         }
 
         return $this->render('garden/new.html.twig', [
