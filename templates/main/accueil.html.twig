@@ -11,11 +11,14 @@
   <hr class="my-4">
   <p>Découvre les légumes de saison et comment les associer, avec des fleurs ou d'autres légumes, pour lutter naturellement contre l'invasion des peites bêtes gourmandes</p>
   <p class="lead">
-  Commence par créer un jardin puis laisse toi guider!
+  Commence par t'inscrire puis crée ton jardin!
   </p>
 
-<button class="btn btn-success">
-  <img class="vegetable-planting" src="{{ asset('pictures/planting.png') }}"> </button>
+
+<li class="nav-item active">
+					<a class="nav-link" href="{{ path('user_new') }}">Inscription</a>
+				</li>
+  <img class="vegetable-planting" src="{{ asset('pictures/planting.png') }}"> 
 
  <div><input type="button" class="btn-previous btn btn-outline-dark" value="Page précédente" onclick="history.go(-1)"></div>
 </div>
