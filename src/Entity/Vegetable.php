@@ -2,9 +2,10 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use App\Entity\Month;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\VegetableRepository")
@@ -29,14 +30,16 @@ class Vegetable
     private $garden;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Season", mappedBy="vegetable")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Month", mappedBy="vegetable")
      */
-    private $seasons;
+    private $months;
+
 
     public function __construct()
     {
         $this->garden = new ArrayCollection();
         $this->seasons = new ArrayCollection();
+        $this->months = new ArrayCollection();
     }
     public function __toString()
     {
@@ -86,30 +89,31 @@ class Vegetable
     }
 
     /**
-     * @return Collection|Season[]
+     * @return Collection|Month[]
      */
-    public function getSeasons(): Collection
+    public function getMonths(): Collection
     {
-        return $this->seasons;
+        return $this->months;
     }
 
-    public function addSeason(Season $season): self
+    public function addMonth(Month $month): self
     {
-        if (!$this->seasons->contains($season)) {
-            $this->seasons[] = $season;
-            $season->addVegetable($this);
+        if (!$this->months->contains($month)) {
+            $this->months[] = $month;
+            $month->addVegetable($this);
         }
 
         return $this;
     }
 
-    public function removeSeason(Season $season): self
+    public function removeMonth(Month $month): self
     {
-        if ($this->seasons->contains($season)) {
-            $this->seasons->removeElement($season);
-            $season->removeVegetable($this);
+        if ($this->months->contains($month)) {
+            $this->months->removeElement($month);
+            $month->removeVegetable($this);
         }
 
         return $this;
     }
+
 }

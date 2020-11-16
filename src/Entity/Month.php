@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -22,14 +24,25 @@ class Month
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Season", inversedBy="months")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToMany(targetEntity="App\Entity\Vegetable", inversedBy="months")
      */
-    private $season;
-    public function __toString()
+    private $vegetable;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $created_at;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $picked_at;
+
+    public function __construct()
     {
-        return $this->name;
+        $this->vegetable = new ArrayCollection();
     }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -47,14 +60,52 @@ class Month
         return $this;
     }
 
-    public function getSeason(): ?Season
+    /**
+     * @return Collection|Vegetable[]
+     */
+    public function getVegetable(): Collection
     {
-        return $this->season;
+        return $this->vegetable;
     }
 
-    public function setSeason(?Season $season): self
+    public function addVegetable(Vegetable $vegetable): self
     {
-        $this->season = $season;
+        if (!$this->vegetable->contains($vegetable)) {
+            $this->vegetable[] = $vegetable;
+        }
+
+        return $this;
+    }
+
+    public function removeVegetable(Vegetable $vegetable): self
+    {
+        if ($this->vegetable->contains($vegetable)) {
+            $this->vegetable->removeElement($vegetable);
+        }
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->created_at;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $created_at): self
+    {
+        $this->created_at = $created_at;
+
+        return $this;
+    }
+
+    public function getPickedAt(): ?\DateTimeInterface
+    {
+        return $this->picked_at;
+    }
+
+    public function setPickedAt(?\DateTimeInterface $picked_at): self
+    {
+        $this->picked_at = $picked_at;
 
         return $this;
     }
