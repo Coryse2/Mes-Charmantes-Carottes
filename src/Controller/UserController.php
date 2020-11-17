@@ -36,7 +36,9 @@ class UserController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            //The User Role is given during the registration
             $user->setRoles(['ROLE_USER']);
+            // The password is retrieved at registration and then hashed and stored in a database
             $plainPassword = $user->getPassword();
             $encodedPassword = $encoder->encodePassword($user, $plainPassword);
             $user->setPassword($encodedPassword);

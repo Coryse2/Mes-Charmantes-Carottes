@@ -19,6 +19,23 @@ class VegetableRepository extends ServiceEntityRepository
         parent::__construct($registry, Vegetable::class);
     }
 
+    public function findAll()
+    {
+        return $this->createQueryBuilder('v')
+            ->addOrderBy('v.createdAt', 'DESC')
+            ->getQuery()
+            ->getResult();
+    }
+    
+    public function findFive()
+    {
+        return $this->createQueryBuilder('v')
+            ->addOrderBy('v.createdAt', 'DESC')
+            ->setMaxResults(5)
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Vegetable[] Returns an array of Vegetable objects
     //  */
